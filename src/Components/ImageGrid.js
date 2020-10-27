@@ -1,11 +1,16 @@
 import React from 'react';
 import useFirestore from '../hooks/useFirestore';
 import {motion} from 'framer-motion';
+import './index.css'
 
 const  ImageGrid = ({setSelectedImg})=> {
 
+    // const user = useContext(UserContext);
+    // const {photoURL, displayName, email} = user;
+    // console.log(user);
+
     const {docs} = useFirestore('images');
-    console.log(docs);  
+    //console.log(docs);  
 
     return (
         <div className = 'img-grid'>

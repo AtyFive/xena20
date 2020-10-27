@@ -6,7 +6,7 @@ import Logo from '../images/xena_logo.png';
 import Post from './Post';
 import Navbar from './Navbar';
 import Familytree from './Familytree'
-import Archive from './Archive'
+import ArchiveMain from './ArchiveMain'
 import Timeline from './Timeline'
 import Calendar from './Calendar'
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -16,7 +16,7 @@ import './App.css';
 const ProfilePage = () => {
   const user = useContext(UserContext);
   const {photoURL, displayName, email} = user;
-  console.log(user);
+  //console.log(user);
   
   return (
 
@@ -48,7 +48,7 @@ const ProfilePage = () => {
         <BrowserRouter>
           <Navbar />
           <Route path = '/home' component = {Post} />
-          <Route path = '/archive' component = {Archive} />
+          <Route path = '/archive' component = {ArchiveMain} />
           <Route path = '/familyTree' component = {Familytree} />
           <Route path = '/timeLine' component = {Timeline} />
           <Route path = '/calendar' component = {Calendar} />

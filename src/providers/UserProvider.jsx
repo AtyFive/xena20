@@ -1,3 +1,4 @@
+import { unstable_createMuiStrictModeTheme } from "@material-ui/core";
 import React, { Component, createContext } from "react";
 import { auth, generateUserDocument } from "../firebase";
 
@@ -14,6 +15,8 @@ class UserProvider extends Component {
   componentDidMount = async () => {
     auth.onAuthStateChanged(async userAuth => {
       const user = await generateUserDocument(userAuth);
+
+      console.log("This user is", user);
       this.setState({ user });
     });
 

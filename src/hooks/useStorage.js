@@ -12,6 +12,7 @@ const useStorage = (file) => {
         const storageRef = projectStorage.ref(file.name);
         //reference to datatbase
         const collectionRef = firestore.collection('images');
+        // const collectionRefTwo = firestore.collection('users/user');
 
         //upload progress - on change of state with periodic snapshots 
         storageRef.put(file).on(
@@ -27,6 +28,7 @@ const useStorage = (file) => {
                 const url = await storageRef.getDownloadURL();
                 const createdAt = timestamp();
                 collectionRef.add({ url, createdAt });
+                //collectionRefTwo.add()
                 setUrl(url);
             }
         )

@@ -6,7 +6,7 @@ import './newstyles.css';
 const ProfilePage = () => {
   const user = useContext(UserContext);
   const {photoURL, displayName, email} = user;
-  console.log(user);
+  console.log("The user is" + user);
   
   return (
 
