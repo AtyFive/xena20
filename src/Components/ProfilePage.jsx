@@ -6,7 +6,7 @@ import Logo from '../images/xena_logo.png';
 import Post from './Post';
 import Navbar from './Navbar';
 import Familytree from './Familytree'
-import ArchiveMain from './ArchiveMain'
+import ArchiveMain from '../Components/archive/ArchiveMain'
 import Timeline from './Timeline'
 import Calendar from './Calendar'
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -14,7 +14,8 @@ import RightBar from './RightBar';
 import './App.css';
 
 const ProfilePage = () => {
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
+
   const {photoURL, displayName, email} = user;
   //console.log(user);
   
@@ -24,23 +25,16 @@ const ProfilePage = () => {
 
       {/* header */}
       <div className = 'app__header'>
-        <img
-          className = 'app_headerImage' src = {Logo} alt = 'XENA'
-        />
-        <div >Login Here</div>
-        <div
-            style={{
-              background: `url(${photoURL || 'https://static.wikia.nocookie.net/636d10db-e38a-4c01-b75b-dcba923fbce2'})  no-repeat center center`,
-              backgroundSize: "cover",
-              height: "200px",
-              width: "200px"
-            }}
-          ></div>
+        <img className = 'app_headerImage' src = {Logo} alt = 'XENA'/>
+        <div className = 'signout_block'>
           <div>
             <h2>Your LoginName is:  {displayName}</h2>
             <h3 >Your signup email is:  {email}</h3>
           </div>  
-        <button className = 'button_signout' onClick = {() => {auth.signOut()}}> Sign out </button>
+          <button className = 'button_signout' onClick = {() => {auth.signOut()}}> Sign out </button>
+        </div>
+
+
       </div>
 
       {/* body */}

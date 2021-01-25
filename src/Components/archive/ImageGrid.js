@@ -5,7 +5,7 @@ import './index.css'
 
 const  ImageGrid = ({setSelectedImg})=> {
 
-    // const user = useContext(UserContext);
+    // const { user } = useContext(UserContext);
     // const {photoURL, displayName, email} = user;
     // console.log(user);
 

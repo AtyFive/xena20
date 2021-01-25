@@ -9,7 +9,7 @@ function Archive() {
 
     const [selectedImg, setSelectedImg] = useState(null);
 
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const {photoURL, displayName, email, imageUrls} = user;
 
     return (

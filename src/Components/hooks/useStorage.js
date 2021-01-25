@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {projectStorage, firestore, timestamp} from '../firebase';
+import {projectStorage, firestore, timestamp} from '../../firebase';
 
 const useStorage = (file) => {
     const [progress, setProgress] = useState(0);
@@ -11,8 +11,9 @@ const useStorage = (file) => {
         //reference to storage
         const storageRef = projectStorage.ref(file.name);
         //reference to datatbase
-        const collectionRef = firestore.collection('images');
-        // const collectionRefTwo = firestore.collection('users/user');
+        // const collectionRef = firestore.collection('images');
+        const collectionRef = firestore.collection('users').doc('mriJxfWotgevFKhb2259tGnedTW2').collection('imageUrlz');
+        
 
         //upload progress - on change of state with periodic snapshots 
         storageRef.put(file).on(

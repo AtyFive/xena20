@@ -1,16 +1,16 @@
 import { unstable_createMuiStrictModeTheme } from "@material-ui/core";
-import React, { Component, createContext } from "react";
+import React, { Component, createContext, useContext } from "react";
 import { auth, generateUserDocument } from "../firebase";
 
 
-export const UserContext = createContext({ user: null });
+export const UserContext = createContext({ user: { user: null } });
+
+export const useUserContext = () => useContext(UserContext);
 
 class UserProvider extends Component {
   state = {
     user: null
   };
-
-  
   
   componentDidMount = async () => {
     auth.onAuthStateChanged(async userAuth => {
@@ -19,15 +19,13 @@ class UserProvider extends Component {
       console.log("This user is", user);
       this.setState({ user });
     });
-
-
   };
 
   render() {
     const { user } = this.state;
 
     return (
-      <UserContext.Provider value={user}>
+      <UserContext.Provider value={{user}}>
         {this.props.children}
       </UserContext.Provider>
     );

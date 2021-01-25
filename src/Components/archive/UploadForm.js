@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ProgressBar from './ProgressBar'
+import '../App.css';
 
 const UploadForm = () => {
     //to store selected file we use state
@@ -26,8 +27,8 @@ const UploadForm = () => {
     return (
         <form>
             <label>
-                <input type = "file" onChange = {changeHandler}/>
-                <span>+</span>
+                <input className = 'upload_buttonMac' type = "file" onChange = {changeHandler}/>
+                <span>Upload new file</span>
             </label>
             
             <div className = 'output'>

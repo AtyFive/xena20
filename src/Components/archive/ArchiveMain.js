@@ -1,22 +1,20 @@
 import React, {useContext, useEffect, useState} from 'react'
 // import ImageGrid from './ImageGrid';
 // import Modal from './Modal';
-// import UploadForm from './UploadForm';
-import { UserContext } from "../providers/UserProvider";
-import './newstyles.css';
-import {firestore, auth} from '../firebase';
+import UploadForm from '../archive/UploadForm';
+import { UserContext } from "../../providers/UserProvider";
+import '../newstyles.css';
+import {firestore, auth} from '../../firebase';
 
 
 function ArchiveMain() {
     const [images, setImages] = useState([]);
     
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const userString = user.uid;
-    // const userRef = firestore.collection("users").doc(user.id);
     const userRef = firestore.collection("users").doc(userString);
     const imageRefs = userRef.collection("imageUrlz");
-    // const imageRefs = firestore.collection("images");
-    // console.log("Hello", user);
+
     useEffect(() => {
         console.log("Hello", userString);
     }, []);
@@ -31,12 +29,17 @@ function ArchiveMain() {
     }, [images]); 
 
     return (
-        <div className = 'archiveImage'>       
-            {images.map(({id, imageUrl}) => (
-                //adding key allows to rerender only the post we need, not all of them
-                <img key = {id} src = {imageUrl.url} alt = "XENA"/>  
-            )) }  
+        <div>
+            <div className = 'archiveImage'>       
+                {images.map(({id, imageUrl}) => (
+                    //adding key allows to rerender only the post we need, not all of them
+                    <img key = {id} src = {imageUrl.url} alt = "XENA"/>  
+                )) }  
+                
+            </div>
+            <UploadForm />
         </div>
+
     )   
 }
 

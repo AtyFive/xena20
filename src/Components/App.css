@@ -3,7 +3,8 @@
 }
 
 .app_headerImage{
-  width: 100px;
+  padding: 10px;
+  height: 80px;
 }
 
 
@@ -53,3 +54,15 @@
 .app__members {
   padding: 20px;
 }
+
+.signout_block {
+  color: grey;
+  margin-left: auto; 
+  margin-right: 0;
+  
+}
+
+/* .upload_buttonMac {
+  color: black;
+  
+} */
