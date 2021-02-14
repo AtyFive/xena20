@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 
 
 const ProgressBar = ({ file, setFile }) => {
-    const {url, progress} = useStorage({file:file, collectionName: 'imageUrlz'});
+    const {url, progress} = useStorage({file:file, collectionName: 'myUploads'});
     console.log (progress, url);
 
     //this to remove progress Bar once its loaded, basically we get url in the end of upload so that if test

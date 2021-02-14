@@ -47,11 +47,11 @@ export default function Navbar() {
           <ListItemText primary="Family archive" />
         </ListItem>
 
-        <ListItem button>
+        <ListItem button component={RouterLink} to="/uploads">
           <ListItemIcon>
             <DraftsIcon />
           </ListItemIcon>
-          <ListItemText primary="Messages" />
+          <ListItemText primary="Uploads" />
         </ListItem>
 
         <ListItem button component={RouterLink} to="/familyTree">

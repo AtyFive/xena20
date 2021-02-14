@@ -7,11 +7,13 @@ import Post from './Post';
 import Navbar from './Navbar';
 import Familytree from './Familytree'
 import ArchiveMain from '../Components/archive/ArchiveMain'
+import DocUploads from '../Components/docUploads/DocUploads'
 import Timeline from './Timeline'
 import Calendar from './Calendar'
 import { BrowserRouter, Route } from 'react-router-dom';
 import RightBar from './RightBar';
 import './App.css';
+import Root from './docUploads/Root';
 
 const ProfilePage = () => {
   const { user } = useContext(UserContext);
@@ -43,6 +45,7 @@ const ProfilePage = () => {
           <Navbar />
           <Route path = '/home' component = {Post} />
           <Route path = '/archive' component = {ArchiveMain} />
+          <Route path = '/uploads' component = {Root} />
           <Route path = '/familyTree' component = {Familytree} />
           <Route path = '/timeLine' component = {Timeline} />
           <Route path = '/calendar' component = {Calendar} />

@@ -1,18 +1,20 @@
-import {useState, useEffect} from 'react';
+import {useContext, useEffect, useState} from 'react'
 import {projectStorage, firestore, timestamp} from '../../firebase';
+import { UserContext } from "../../providers/UserProvider";
 
-const useStorage = (file) => {
+const useStorage = ({file, collectionName}) => {
     const [progress, setProgress] = useState(0);
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
 
+    const { user } = useContext(UserContext);
+    const userString = user.uid;
+
     //logic as before in square brackets is the conndition that fires a useffect codes - in this case file change
     useEffect (() =>{
-        //reference to storage
+        //reference to storage (Storage, not Cloud Firestore)
         const storageRef = projectStorage.ref(file.name);
-        //reference to datatbase
-        // const collectionRef = firestore.collection('images');
-        const collectionRef = firestore.collection('users').doc('mriJxfWotgevFKhb2259tGnedTW2').collection('imageUrlz');
+        const collectionRef = firestore.collection('users').doc(userString).collection(collectionName);
         
 
         //upload progress - on change of state with periodic snapshots 
