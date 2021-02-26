@@ -11,9 +11,12 @@ import DocUploads from '../Components/docUploads/DocUploads'
 import Timeline from './Timeline'
 import Calendar from './Calendar'
 import { BrowserRouter, Route } from 'react-router-dom';
-import RightBar from './RightBar';
+import RightBar from './Rightbar/RightBar';
+import NewGroupOne from './groups/NewGroupOne';
 import './App.css';
 import Root from './docUploads/Root';
+import TextField from '@material-ui/core/TextField';  
+import Button from '@material-ui/core/Button';  
 
 const ProfilePage = () => {
   const { user } = useContext(UserContext);
@@ -28,6 +31,17 @@ const ProfilePage = () => {
       {/* header */}
       <div className = 'app__header'>
         <img className = 'app_headerImage' src = {Logo} alt = 'XENA'/>
+        <div className = 'newGroup_button'>
+          {/* <NewGroup /> */}
+          <NewGroupOne />
+        </div>
+        
+        
+        <div className = "searchBar">
+          <TextField id="outlined-basic" label="Search" variant="outlined" />
+        </div>
+        
+        
         <div className = 'signout_block'>
           <div>
             <h2>Your LoginName is:  {displayName}</h2>
@@ -35,8 +49,7 @@ const ProfilePage = () => {
           </div>  
           <button className = 'button_signout' onClick = {() => {auth.signOut()}}> Sign out </button>
         </div>
-
-
+        
       </div>
 
       {/* body */}
@@ -54,10 +67,9 @@ const ProfilePage = () => {
         {/* rightbar */}
         <div className = 'app__rightbar'>
           <div className = 'app__members'>
-            <h3>Family members: </h3>
             <RightBar />
           </div>
-          <h3 className = 'app__adds'>Addds Space</h3>
+          
         </div>
       </div>
 

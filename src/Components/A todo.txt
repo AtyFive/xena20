@@ -1,0 +1,9 @@
+1) Groups render in right bar
+    get context, search user string in groups, then render group names where user is
+
+2) Group/individual data rendering
+3) Edit permissions for each document section
+
+4) Timeline
+
+5) Calendar

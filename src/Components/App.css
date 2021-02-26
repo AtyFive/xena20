@@ -13,12 +13,28 @@
 }
 
 .app__header {
-  object-fit: contain;
+  /* object-fit: contain; */
   display: flex;
   padding: 20px;
   border-bottom: 1px solid lightgray;
   background-color: #fafafa;
+  align-items: center;
+}
 
+.newGroup_button{
+  margin-left: 200px;
+}
+
+.newGroup {
+  border: 1px solid #d66;
+}
+
+.searchBar {
+  margin-left: auto; 
+  margin-right: 0;
+  position: relative;
+  left: 50px;
+  padding-right: 40px;
 }
 
 .app__body {
@@ -32,10 +48,21 @@
 }
 
 .app__rightbar {
-  background-color: lightskyblue;
   max-width: 400px;
-  position: absolute;
-  right: 100px;
+  min-width: 200px;
+  margin-left: auto; 
+  margin-right: 0;
+}
+
+.familyAvatar {
+  display: flex; 
+  padding-bottom: 30px;
+  border-bottom: 3px dotted #bbb;
+}
+
+.groupProjects {
+  padding-left: 30px;
+  list-style-type: circle;
 }
 
 
