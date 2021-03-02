@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 import Familytree from './Familytree'
 import ArchiveMain from '../Components/archive/ArchiveMain'
 import DocUploads from '../Components/docUploads/DocUploads'
-import Timeline from './Timeline'
+import Timeline from './Timeline/Timeline'
 import Calendar from './Calendar'
 import { BrowserRouter, Route } from 'react-router-dom';
 import RightBar from './Rightbar/RightBar';
@@ -16,7 +16,6 @@ import NewGroupOne from './groups/NewGroupOne';
 import './App.css';
 import Root from './docUploads/Root';
 import TextField from '@material-ui/core/TextField';  
-import Button from '@material-ui/core/Button';  
 
 const ProfilePage = () => {
   const { user } = useContext(UserContext);

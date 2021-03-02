@@ -12,7 +12,7 @@ function DocUploads({collRef, newCollRef, alterTime}) {
             })));
         })
     }, [images]); 
-
+    
     return (
         <div>
             <div className = 'archiveImage'>       

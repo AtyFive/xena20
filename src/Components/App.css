@@ -89,7 +89,43 @@
   
 }
 
-/* .upload_buttonMac {
-  color: black;
+.timeline_general {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.timeline_year{
+  background-color: aquamarine;
+  min-width: 100px;
+  max-height: 50px;
   
-} */
+  padding: 20px;
+  margin: 20px;
+}
+
+.timeEvent_main{
+  background-color: burlywood;
+  min-height: 200px;
+  max-width: 200px;
+  padding: 10px;
+  
+}
+
+.timeEvent_heading{
+  font-weight: bold;
+}
+
+.timeEvent_image{
+  max-width: 100px;
+  /* float: left; */
+  margin: 10px;
+}
+
+.event__name{
+  border: 1px solid #d66;
+}
+
+.event__date{
+  border: 1px solid #d66;
+}

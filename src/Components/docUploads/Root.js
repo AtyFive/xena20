@@ -2,9 +2,6 @@ import React, {useContext, useEffect, useState} from 'react'
 import DocUploads from './DocUploads';
 import { UserContext } from "../../providers/UserProvider";
 import {firestore, auth} from '../../firebase';
-import PlusButton from './PlusButton';
-import Counter from './Counter';
-
 
 function Root() {
     const { user } = useContext(UserContext);
