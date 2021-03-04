@@ -12,6 +12,7 @@ function Timeline() {
     const userReftime = firestore.collection("users").doc(userString).collection('timeline').orderBy("date", "asc");
 
     const [events, setEvents] = useState([]);
+    const [selectedyear, setSelectedyear] = useState(2021);
     
     //get array of values from firebase reference
     useEffect(() => {
@@ -25,27 +26,33 @@ function Timeline() {
     
     //get all unique years for initial timeline view
     const myYears = useMemo(
-        () => events.map(myEvent => myEvent.eventData.date.toDate()),
+        () => events.map(myEvent => myEvent.eventData.date.toDate().getYear()),
         [events]
     );
+    const uniqueYears = [...new Set(myYears)];
+
+    const onTimeClick = (clicked) => {
+        // alert(clicked );
+        setSelectedyear(clicked);   
+    }
 
     return (
         <div>
             <NewEvent />
-                <div className = 'timeline_general'>
-                {myYears.map((kkk)=> (
-                    <div className = 'timeline_year'>{kkk.getYear()+1900}</div>
+            <div className = 'timeline_general'>
+                {uniqueYears.map((kkk)=> (
+                    <button className = 'timeline_year' onClick = {() => onTimeClick(kkk+1900)}>{kkk+1900}</button>
+                    
                 ))}
-                {/* {[...new Set(myYears.getYear())].map((kkk)=> (
-                    <p>{kkk + 1900}</p>
-                ))} */}
             </div>
-            
+            {/* <TimeEvent text = {eventData.description} headingDate = {eventData.date.toDate()}/> */}
             {events.map (({id, eventData})=> (
-                <TimeEvent text = {eventData.description} headingDate = {eventData.date.toDate()}/>     
+                
+                eventData.date.toDate().getYear() == (selectedyear-1900) ? (
+                <TimeEvent text = {eventData.description} headingDate = {eventData.date.toDate()}/>
+                ) : <p></p>
             ))}
         </div>
-        
     )
 }
 
