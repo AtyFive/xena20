@@ -1,24 +1,15 @@
 1) Groups render in right bar
-    get context, search user string in groups, then render group names where user is
+    create scheme of data flow - remake in a manner where all components get string for user or group and render accordingly
+    add users to group
 
-2) Group/individual data rendering
+2) 
 3) Edit permissions for each document section
-
-4) Timeline
+    check that other users cant click your staff if its rendered to them and cant edit it
+    when i allow my timeline or other section ???
 
 5) Calendar
 
 
 what if there is a big quantity of events in timeline
 
-umbrahide waist
-umbrahide pauldron
-
-
-
-bonesh armguards
-boneshatter treads
-pauldron
-waist
-greaves
 

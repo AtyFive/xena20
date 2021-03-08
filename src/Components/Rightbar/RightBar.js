@@ -17,7 +17,7 @@ export default function RightBar() {
         </div>
 
         <h3>My Groups and Projects: </h3>
-        <MyGroups />
+        {/* <MyGroups /> */}
         
         
       </div>

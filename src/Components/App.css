@@ -82,6 +82,11 @@
   padding: 20px;
 }
 
+.group_list{
+  background-color: #d66;
+  cursor: pointer;
+}
+
 .signout_block {
   color: grey;
   margin-left: auto; 

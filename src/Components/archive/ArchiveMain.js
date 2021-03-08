@@ -7,17 +7,23 @@ import '../newstyles.css';
 import {firestore, auth} from '../../firebase';
 
 
-function ArchiveMain() {
+function ArchiveMain(props) {
     const [images, setImages] = useState([]);
     
-    const { user } = useContext(UserContext);
-    const userString = user.uid;
-    const userRef = firestore.collection("users").doc(userString);
-    const imageRefs = userRef.collection("imageUrlz");
+    // const { user } = useContext(UserContext);
+    // const userString = user.uid;
+    // const userString = props.myUser.uid;
+    
+    // const userRef = firestore.collection("users").doc(userString);
+    const dingo = props.myTemp;
+    
+    const imageRefs = dingo.collection("imageUrlz");
 
     useEffect(() => {
-        console.log("Hello", userString);
-    }, []);
+        
+        // console.log("Hello Archive", yolo);
+        console.log("Hello temp", props.myTemp);
+      }, []);
     
     useEffect(() => {
         imageRefs.onSnapshot(snapshot => {
