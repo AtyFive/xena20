@@ -1,15 +1,35 @@
-1) Groups render in right bar
-    create scheme of data flow - remake in a manner where all components get string for user or group and render accordingly
-    add users to group
+Style rightbar
+Do gallery properly 
+Emails -  check whats there and how it works, add voice/video recording
+Family tree
 
-2) 
+
+
+
+1) make some page load on first load - posts '/' HOME PAGE ON LOAD OR SIGN in
+SIGN OUT DOESNT GO TOSIGN IN
+2) change where i reset groupview by clicking XENA image to where i click home component
 3) Edit permissions for each document section
     check that other users cant click your staff if its rendered to them and cant edit it
     when i allow my timeline or other section ???
+4) 
 
 5) Calendar
+6) Search - people, your own folders etc.
+7) Updates in homescreen
+8) Finish chat closer to linkedins
+9) Videomessaging as now in viber - video messages can be used in many - like congratulations etc.
 
 
 what if there is a big quantity of events in timeline
 
+
+A RULE ABOUT ALLOWING TO UPLOAD IMAGE
+
+what if displayname is too long and doesnt fit - or any other elements like that - familyname, etc.
+make image - profile image be cut properly so its always same size
+
+
+mail: vest, greaves, waist
+leather: helm
 

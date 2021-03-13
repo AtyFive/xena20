@@ -1,25 +1,102 @@
-* {
-  margin: 0;
+.App {
+  background-color: rgb(235, 231, 231);
+}
+
+/* header styles */
+.headerHolder{
+  background-color: #fafafa;
+  border-bottom: 1px solid lightgray;
+}
+.app__header {
+  align-items: center;
+  width: 100vw;
+  display: flex;
+  padding: 10px;
+  width: 1128px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 .app_headerImage{
-  padding: 10px;
-  height: 80px;
+  /* padding: 10px; */
+  height: 56px;
+}
+
+.signout_block {
+  color: grey;
+  margin-left: auto; 
+  margin-right: 0;
+}
+
+.signoutAvatar {
+  cursor: pointer;
+}
+
+.searchBar {
+
+  margin-left: 20px;
+  
+  /* height: 80px; */
 }
 
 
-.App {
+/* body styles */
+.app__body {
+  display: flex;
+  width: 1128px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+  min-height: 100%;
+  margin-top: 20px;
+  
+}
+
+.left__bar{
+  display: flex;  
+  min-height: 100%;
+  margin-bottom: 20px;  
+  
+}
+
+.app_profileImage {
+  cursor: pointer;
+  margin: 20px 20px 5px 20px;
+  width: 175px;
+}
+
+.displayName{
+  margin-left: 20px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.displayName:hover{
+  border-bottom: 2px solid rgb(32, 30, 30);
+}
+
+.app_midline {
   background-color: white;
 }
 
-.app__header {
-  /* object-fit: contain; */
-  display: flex;
-  padding: 20px;
-  border-bottom: 1px solid lightgray;
-  background-color: #fafafa;
-  align-items: center;
+.right__menu {
+  margin-right: 20px;
+  width: 225px;
+  background-color: white;
 }
+
+/* .global-nav__content {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  min-height: 100%;
+  width: 1128px;
+  }
+   */
+
 
 .newGroup_button{
   margin-left: 200px;
@@ -29,29 +106,25 @@
   border: 1px solid #d66;
 }
 
-.searchBar {
-  margin-left: auto; 
-  margin-right: 0;
-  position: relative;
-  left: 50px;
-  padding-right: 40px;
-}
 
-.app__body {
-  display: flex;
-}
+
+
 
 .app__sidebar {
   max-width: 240px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex; 
+
 }
 
 .app__rightbar {
-  max-width: 400px;
-  min-width: 200px;
-  margin-left: auto; 
-  margin-right: 0;
+  /* max-width: 400px;
+  min-width: 200px; */
+  /* margin-left: auto; 
+  margin-right: 0; */
+  background-color: white;
+  margin-left: 20px;
+  margin-bottom: 20px; 
 }
 
 .familyAvatar {
@@ -87,12 +160,6 @@
   cursor: pointer;
 }
 
-.signout_block {
-  color: grey;
-  margin-left: auto; 
-  margin-right: 0;
-  
-}
 
 .timeline_general {
   display: flex;

@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState, useMemo} from 'react';
 import { UserContext } from "../../providers/UserProvider";
 import {firestore} from '../../firebase';
 import '../App.css';
+import NewgroupOne from '../groups/NewGroupOne';
 
 const MyGroups = (props) => {
   // const [userName, setUserName] = useState("");
@@ -28,7 +29,6 @@ const MyGroups = (props) => {
   
   return(
     <div>
-      
       <div>
         {userGroups.map(({id,groupData})=> (  
           <p 
@@ -36,8 +36,8 @@ const MyGroups = (props) => {
             onClick = {() => props.alterView(groupCollection.doc(id))}
           >{groupData.name}</p> 
         ))}
-         
       </div>
+      <NewgroupOne />
     </div>
    
 
@@ -46,4 +46,3 @@ const MyGroups = (props) => {
 
 export default MyGroups;
 
- /* <p>{groupData.name}</p> */

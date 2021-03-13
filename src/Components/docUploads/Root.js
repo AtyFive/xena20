@@ -3,45 +3,28 @@ import DocUploads from './DocUploads';
 import { UserContext } from "../../providers/UserProvider";
 import {firestore, auth} from '../../firebase';
 
-function Root() {
-    const { user } = useContext(UserContext);
-    const userString = user.uid;
-    const userRef = firestore.collection("users").doc(userString);
-    const imageRefs = userRef.collection("myUploads");
-    const newImageRefs = userRef.collection("imageUrlz");
+function Root(props) {
+    const dingo = props.myTemp;
+    const imageRefs = dingo.collection("myUploads");
     const [refTo, setrefTo] = useState(imageRefs);
 
+    //to rerender ref when it is changed from parent to groupview
+    useEffect(() => {
+        const imageRefsChanged = dingo.collection("myUploads");
+        setrefTo(imageRefsChanged);
+      }, [dingo]);
 
-    // const [ref, setRef] = useState("");
-    // const myImage = imageRefs.doc('AB8V7x7G6K0341yTLgoA');
-    // const theVera = myImage.get().then((doc) => {
-    //     if (doc.exists) {
-    //         // console.log("Document ddata:", doc.data());
-    //         setRef(doc.data());
-    //         // console.log("Document ddata:", ref)
-    //     } 
-    // });
-    
-    // const [count, setCount] = useState('null');
-    // const [names, setNames] = useState(["Taras", "Taras1", "taras2", "Natalie"]);
+    //this is for future folder structure
+    const newImageRefs = firestore.collection("users").doc("mriJxfWotgevFKhb2259tGnedTW2").collection("imageUrlz");
     
     return (
         <div>
             <DocUploads  
-                // collRef = {imageRefs} 
+                // key = {imageRefs} 
                 collRef = {refTo}
                 newCollRef = {newImageRefs} 
                 alterTime={egoOne => setrefTo(egoOne)}
             />
-           
-            {/* {names.map ((name) => (
-                <button type="button" onClick = {() => alert(name)} >{name}</button>
-            ))}
-
-            <Counter testOne = 'Jackson' login={myFunc => setCount(myFunc)}/>
-            <p>Hellos + {count}</p> */}
-            {/* <img src = {ref.url} alt = "XENA"/>  */}
-
         </div>
 
     )   

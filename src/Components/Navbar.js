@@ -21,11 +21,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// function ListItemLink(props) {
-//   return <ListItem button component="a" {...props} />;
-// }
-
-
 
 export default function Navbar() {
   const classes = useStyles();
@@ -74,7 +69,6 @@ export default function Navbar() {
           </ListItemIcon>
           <ListItemText primary="Calendar" />
         </ListItem>
-
       </List>
       
       

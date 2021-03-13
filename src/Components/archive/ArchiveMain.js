@@ -1,22 +1,16 @@
 import React, {useContext, useEffect, useState} from 'react'
-// import ImageGrid from './ImageGrid';
-// import Modal from './Modal';
 import UploadForm from '../archive/UploadForm';
-import { UserContext } from "../../providers/UserProvider";
 import '../newstyles.css';
-import {firestore, auth} from '../../firebase';
+
 
 
 function ArchiveMain(props) {
     const [images, setImages] = useState([]);
-    
     // const { user } = useContext(UserContext);
     // const userString = user.uid;
     // const userString = props.myUser.uid;
-    
     // const userRef = firestore.collection("users").doc(userString);
     const dingo = props.myTemp;
-    
     const imageRefs = dingo.collection("imageUrlz");
 
     useEffect(() => {

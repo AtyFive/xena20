@@ -13,7 +13,7 @@ const NewgroupOne = ()=>  {
   }
 
   const handleSubmit = (event)=> {
-    alert('A name was submitted: ' + group.groupName);
+    alert('New Group was created: ' + group.groupName);
     event.preventDefault();
     firestore.collection('groups').doc().set({
       name: group.groupName,
@@ -24,7 +24,7 @@ const NewgroupOne = ()=>  {
   return (
     <form onSubmit={handleSubmit}>
       <label >
-        Enter Group Name:
+        Enter New Group Name:
         <input className = 'newGroup' type="text" value={group.groupName} onChange={handleChange} />
       </label>
       <input type="submit" value="Submit" />
