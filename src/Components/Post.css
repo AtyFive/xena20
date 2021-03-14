@@ -1,8 +1,11 @@
 .post {
     max-width: 500px;
     background-color: white;
-    border: 1px solid lightgray;
-    margin-bottom: 45px;
+    /* border: 1px solid lightgray; */
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    
 }
 
 .post__Image {
@@ -10,19 +13,46 @@
     object-fit: contain;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
+    border-radius: 5px;
+    /* margin-bottom: 10px; */
+}
+
+.like_share {
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .post__text {
     font-weight: normal;
-    padding: 20px;
+    padding-bottom: 10px;
 }
 
 .post__header {
     display: flex;
     align-items: center;
-    padding: 20px;
+    margin-bottom: 10px;
 }
 
 .post__avatar {
     margin-right: 10px;
+}
+
+.update_holder {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+}
+
+.update{
+    margin-left: 10px;
+}
+
+.elementRef{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.groupName{
+    font-weight: 600;
 }

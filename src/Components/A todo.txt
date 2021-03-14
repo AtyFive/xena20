@@ -1,4 +1,6 @@
-Style rightbar
+
+Do dummy Updates
+Posts, yes no?
 Do gallery properly 
 Emails -  check whats there and how it works, add voice/video recording
 Family tree

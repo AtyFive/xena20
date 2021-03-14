@@ -29,7 +29,7 @@ const MyGroups = (props) => {
   
   return(
     <div>
-      <div>
+      <div className = 'group_list'>
         {userGroups.map(({id,groupData})=> (  
           <p 
             className = "group_list"

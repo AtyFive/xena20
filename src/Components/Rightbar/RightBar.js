@@ -8,7 +8,7 @@ import '../App.css';
 export default function RightBar() {
     return (
       <div>
-        <h3>Family members: </h3>
+        <h3 className = 'family_heading'>Family members: </h3>
         <div className = 'familyAvatar'>
           <Avatar alt="Remy Sharp" src={Xena_a} />
           <Avatar alt="Remy Sharp">TG</Avatar>
@@ -17,7 +17,7 @@ export default function RightBar() {
           <Avatar alt="Cindy Baker" src={require('../../images/queen.jpg')} />
         </div>
 
-        <h3>My Groups and Projects: </h3>
+        <h3 className = 'family_heading'>My Groups and Projects: </h3>
         {/* <MyGroups /> */}
         
         
