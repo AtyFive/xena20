@@ -7,6 +7,7 @@ import Post from './Post';
 import Navbar from './Navbar';
 import Familytree from './Familytree'
 import ArchiveMain from '../Components/archive/ArchiveMain'
+import Archive from "./archive/Archive";
 import Timeline from './Timeline/Timeline'
 import Calendar from './Calendar'
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -17,6 +18,9 @@ import Root from './docUploads/Root';
 import MyGroups from '../Components/Rightbar/MyGroups.js';
 import ChatRoom from "./Chat/ChatRoom";
 import Header from "./Header";
+
+import NewMail from "./Mail/NewMail";
+
 
 const ProfilePage = () => {
   const { user } = useContext(UserContext);
@@ -30,6 +34,7 @@ const ProfilePage = () => {
 
   return (
     <div className="App">
+    <BrowserRouter >
       {/* header */}
       <div className = "headerHolder">
         <Header />
@@ -38,7 +43,7 @@ const ProfilePage = () => {
       {/* body */}
       <div className = 'app__body'>
         <div className = "left__bar">
-          <BrowserRouter >
+          
             {/* https://ui.dev/react-router-v4-pass-props-to-components/  */}
             <div className = "right__menu">
               <img className = 'app_profileImage' src = {photoURL} alt = 'ANY' onClick = {() => setTemp(userRef)}/>
@@ -54,10 +59,8 @@ const ProfilePage = () => {
               <Route path = '/familyTree' component = {Familytree} />
               <Route path = '/timeLine' component = {Timeline} />
               <Route path = '/calendar' component = {Calendar} />
+              <Route path = '/mail' component = {NewMail} />
             </div>
-            
-
-          </BrowserRouter>   
         </div>
       {/* rightbar */}
         <div className = 'app__rightbar'>
@@ -68,7 +71,7 @@ const ProfilePage = () => {
           <ChatRoom />
         </div>
       </div>
-
+    </BrowserRouter> 
   </div>
 
 

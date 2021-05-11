@@ -1,11 +1,30 @@
 
-Do dummy Updates
-Posts, yes no?
+new mail + read mail
+sent mail
+FRAMER MOTION
+//if unread - bold
+//search email
+//show how many unread on email - and make icon count accrodingly
+//new emeail - to whom, text, attachment
+
+when mail clicked - load mail and it should have buttons to delete, reply ,forward also - save to uploads (ability to give a name)
+talk about whats in uploads
+
+tags - on photos, 
+
+chip for selected users to add to group
+calendar substitute the one i have in timeline
+framer motions where new buttons
+gridlist with heading from material ui fro subfolders?
+upload button for attachment in mail
+
 Do gallery properly 
 Emails -  check whats there and how it works, add voice/video recording
 Family tree
 
+DO ERRORS AND VAILDATIONS ON ALL USER INPUTS
 
+fix offline error - need actually universal error
 
 
 1) make some page load on first load - posts '/' HOME PAGE ON LOAD OR SIGN in
@@ -32,6 +51,4 @@ what if displayname is too long and doesnt fit - or any other elements like that
 make image - profile image be cut properly so its always same size
 
 
-mail: vest, greaves, waist
-leather: helm
 

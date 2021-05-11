@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useContext, useState } from "react";
+import { UserContext } from "../../providers/UserProvider";
 import useFirestore from '../hooks/useFirestore';
 import {motion} from 'framer-motion';
-import './index.css'
+import './archive.css'
+import {auth, firestore} from "../../firebase";
 
-const  ImageGrid = ({setSelectedImg})=> {
 
-    // const { user } = useContext(UserContext);
-    // const {photoURL, displayName, email} = user;
-    // console.log(user);
+const  ImageGrid = ({imagesToGet, setSelectedImg})=> {
 
-    const {docs} = useFirestore('images');
-    //console.log(docs);  
+    const { user } = useContext(UserContext);
+    const userString = user.uid;
+    const imageCollection = firestore.collection("users").doc(userString).collection("imageUrlz"); 
+    const {docs} = useFirestore(imageCollection);
 
     return (
         <div className = 'img-grid'>

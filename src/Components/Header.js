@@ -9,6 +9,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Avatar from '@material-ui/core/Avatar';
 import Xena_a from '../images/xena_a.jpg';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import { Link, Link as RouterLink } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const Header = () => {
   const { user } = useContext(UserContext);
@@ -38,8 +40,13 @@ const Header = () => {
                 Open Menu
               </Button> */}
               <div className = 'signoutAvatar'>
-                <div className ='mail'>
-                  <MailOutlineIcon style={{ fontSize: 50 }}/>
+                <div className ='mail' >
+                  
+                    <Link to="/mail"> 
+                      <MailOutlineIcon style={{ fontSize: 50 }} />
+                    </Link>
+                  
+
                 </div>
                 <Avatar onClick={handleClick} alt="Remy Sharp" src={Xena_a} />
               </div>

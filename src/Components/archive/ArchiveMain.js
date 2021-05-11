@@ -2,42 +2,32 @@ import React, {useContext, useEffect, useState} from 'react'
 import UploadForm from '../archive/UploadForm';
 import '../newstyles.css';
 
-
-
 function ArchiveMain(props) {
     const [images, setImages] = useState([]);
-    // const { user } = useContext(UserContext);
-    // const userString = user.uid;
-    // const userString = props.myUser.uid;
-    // const userRef = firestore.collection("users").doc(userString);
     const dingo = props.myTemp;
     const imageRefs = dingo.collection("imageUrlz");
 
-    useEffect(() => {
-        
-        // console.log("Hello Archive", yolo);
-        console.log("Hello temp", props.myTemp);
-      }, []);
     
     useEffect(() => {
         imageRefs.onSnapshot(snapshot => {
             setImages(snapshot.docs.map(doc => ({
                 id: doc.id,
-                imageUrl: doc.data()
+                imageData: doc.data()
             })));
         })
     }, [images]); 
 
     return (
         <div>
+            <UploadForm imagesToGet = {imageRefs}/>
             <div className = 'archiveImage'>       
-                {images.map(({id, imageUrl}) => (
+                {images.map(({id, imageData}) => (
                     //adding key allows to rerender only the post we need, not all of them
-                    <img key = {id} src = {imageUrl.url} alt = "XENA"/>  
+                    <img key = {id} src = {imageData.url} alt = "XENA"/>  
                 )) }  
                 
             </div>
-            <UploadForm />
+            
         </div>
 
     )   
